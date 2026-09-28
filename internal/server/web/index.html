@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Callboard</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232f6fdc'/><text x='16' y='22' font-family='system-ui' font-weight='700' font-size='17' fill='white' text-anchor='middle'>C</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <nav class="side" aria-label="Lists">
+    <div class="logo"><i>C</i>Callboard</div>
+    <div class="crumb"><b id="repo">…</b><span class="branch" id="branch" hidden></span></div>
+    <div class="nav" id="tabs" role="tablist" aria-orientation="vertical"></div>
+    <div class="sidefoot"><span class="live" id="live"><i></i><span>Connecting…</span></span><span class="file" id="file"></span></div>
+  </nav>
+  <button class="agentsum" id="agentsum" data-act="rail" aria-expanded="false" aria-controls="rail"></button>
+  <div class="mid">
+    <div id="banner" class="banner" hidden></div>
+    <div class="head" id="head"></div>
+    <div id="pane"></div>
+  </div>
+  <aside id="rail" aria-label="Agents and changes">
+    <div class="panel">
+      <h3>Here now</h3>
+      <div id="sessions"></div>
+    </div>
+    <div class="panel" id="claimpanel">
+      <h3>Who is on what</h3>
+      <div id="claims"></div>
+    </div>
+    <div class="panel">
+      <h3>Recent changes</h3>
+      <div id="events"></div>
+    </div>
+  </aside>
+  <aside id="peek" class="peek" hidden aria-label="The open item"></aside>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

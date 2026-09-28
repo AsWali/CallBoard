@@ -1,0 +1,23 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - name: Check the tag matches the version in the code
+        run: |
+          want="${GITHUB_REF_NAME#v}"
+          have="$(go run ./cmd/callboard version | awk '{print $NF}')"
+          [ "$want" = "$have" ] || { echo "tag $GITHUB_REF_NAME but the code says $have"; exit 1; }
+      - run: VERSION="${GITHUB_REF_NAME#v}" scripts/release.sh
+      - run: gh release create "$GITHUB_REF_NAME" dist/* --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}
