@@ -9,6 +9,8 @@ When Claude Code or Codex works on your project, Callboard keeps its plan where 
   <img alt="The Callboard page for a made-up habit tracker called Pebble, updating live: Codex claims the settings screen task, a Claude Code session called streaks finishes the streak counter, and then a question under For you is answered with one click, which shows up on the task that was waiting on it." src="docs/images/clip-live-light.gif">
 </picture>
 
+## Set it up using a coding agent by telling it this:
+Read https://asror.dev/callboard-setup.md and set up Callboard for me
 ## Why
 
 - **See what your agents are doing.** Stop scrolling back through a chat to find out what's done and what's next. It's all in one list, updated as they work.
